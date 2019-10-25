@@ -1,0 +1,57 @@
+body {
+	margin:0;
+	padding:0;
+}
+h1 {
+	font-weight: normal;
+	margin:0;
+}
+
+#header {
+	float: left;
+	width: 100%;
+	background-color: rgb(160, 160, 160);
+}
+ul {
+	float: left;
+	margin:0;
+	margin-left:15%;
+	padding:0;
+}
+ul#nav > li {
+	float: left;
+	padding: 20px 10px 20px 10px;	
+	list-style-type: none;
+}
+ul#nav > li > a{
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+}
+
+#container{
+	float: left;
+	margin-left: 15%;
+	margin-right: 15%;
+	width: 70%;
+}
+#main {
+	float: left;
+	width: 64%;
+	margin-top: 20px;
+	padding: 30px;
+	border: solid 2px rgb(200, 200, 200);
+	border-radius: 2px;
+	background-color: rgb(233, 233, 233);
+}
+#side {
+	float:right;
+	padding: 30px;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 0;
+	width: 24%;
+	border: solid 2px rgb(200, 200, 200);
+	border-radius: 2px;
+	background-color: rgb(233, 233, 233);
+}
