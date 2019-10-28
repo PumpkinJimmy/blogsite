@@ -6,8 +6,8 @@ from .models import Article
 def indexView(request):
     return render(request, 'myblog/index.html')
 
-def articleView(request, pk):
-    art = Article.objects.get(pk)
+def articleView(request, id):
+    art = Article.objects.get(id=id)
 
     return render(request, 'myblog/article.html', context={'article': art})
 
