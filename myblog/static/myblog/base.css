@@ -95,3 +95,8 @@ ul#nav > li > a{
 .content {
 	font-size: 18px;
 }
+.md ul {
+	float: none;
+	margin:0;
+	padding:0;
+}
