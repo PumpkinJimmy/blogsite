@@ -1,4 +1,8 @@
 {% extends "myblog/base.html" %}
+{% block meta %}
+{% load static %}
+<link rel="stylesheet" href="{% static "myblog/md.css" %}" />
+{% endblock %}
 {% block main %} 
 <h1>{{ article.title }}</h1>
 <div class="content">{{ content|safe }}</div>

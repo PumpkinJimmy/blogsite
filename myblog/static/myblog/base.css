@@ -46,16 +46,9 @@ ul#nav > li > a{
 #main {
 	float: left;
 	width: 64%;
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
-.main-box {
-	width: 95%;
-	padding: 30px;
-	border: solid 2px rgb(200, 200, 200);
-	border-radius: 2px;
-	background-color: rgb(233, 233, 233);
-}
 #side {
 	float:right;
 	padding: 30px;
@@ -69,10 +62,11 @@ ul#nav > li > a{
 }
 
 .item {
-	float: left;
-	width: 95%;
-	margin-top: 20px;
+	width: 96%;
 	padding: 30px;
+	padding-left: 2%;
+	padding-right:2%;
+	margin-bottom: 25px;
 	border: solid 2px rgb(200, 200, 200);
 	border-radius: 2px;
 	background-color: rgb(233, 233, 233);
@@ -94,9 +88,4 @@ ul#nav > li > a{
 }
 .content {
 	font-size: 18px;
-}
-.md ul {
-	float: none;
-	margin:0;
-	padding:0;
 }

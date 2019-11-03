@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Article
-from md_parse.parse import Parser, Renderer
+from md_parse.parse import Parser, HtmlRenderer
 # Create your views here.
 
 
@@ -10,7 +10,7 @@ def indexView(request):
 def articleView(request, id):
     art = Article.objects.get(id=id)
     parser = Parser()
-    renderer = Renderer()
+    renderer = HtmlRenderer()
     content = renderer.render(parser.parse(art.content.replace('\r', '')))
     content = '<div class="md">' + content + '</div>'
     return render(request, 'myblog/article.html', context={'article': art, 'content':content})
