@@ -26,7 +26,8 @@ def uploadView(request):
         return render(request, 'myblog/upload.html')
     else:
         data = str(request.FILES['f'].read(), encoding="utf-8")
-        art = Article(title="Upload Article", content=data, brief="")
+        lines = data.split('\n')
+        art = Article(title=data[0].lstrip('# '), content=data, brief="")
         art.save()
         return HttpResponse("Success")
 
