@@ -1,10 +1,22 @@
 {% extends "myblog/base.html" %}
+{% load static %}
 {% block main %}
-<h1>全部博文</h1>
 {% for art in articles %}
-<div class="item">
-	<div class="item-title"><a href="{% url "article" art.id %}">{{ art.title }}</a></div>
-	<div class="item-brief">{{ art.brief }}</div>
+<div class="mainbox fadeIn slideDownContent">
+	<div class="item-title">{{ art.title}}</div>
+	<div class="header">
+		<img src="{% static "myblog/create_date.png" %}" class="brand">发表于{{ art.create_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<img src="{% static "myblog/update_date.png" %}" class="brand">更新于{{ art.update_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<img src="{% static "myblog/category.png" %}" class="brand">分类于{{ art.category }}
+	</div>
+
+	<div class="item-text">
+		{{ art.brief }}
+	</div>
+
+	<div class="readmore">
+		<a href="{% url "article" art.id %}">阅读更多</a>
+	</div>
 </div>
 {% endfor %}
 {% endblock %}

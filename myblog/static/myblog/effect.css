@@ -11,3 +11,24 @@
 .slideUp {
 	animation: kf 1.5s;
 }
+@keyframes fadeInFrame{
+	from { opacity:0%;}
+	to {opacity: 100%;}
+}
+.fadeIn{
+	animation: fadeInFrame 0.5s ease-in;
+}
+.fadeInContent *{
+	animation: fadeInFrame 0.5s ease-in;
+}
+@keyframes slideDownFrame{
+from { transform:translateY(-10px);}
+to {transform:translateY(0);}
+}
+.slideDown {
+	animation: slideDownFrame 0.9s;
+}
+.slideDownContent * {
+	animation: slideDownFrame 0.9s;
+}
+	
