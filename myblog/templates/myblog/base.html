@@ -4,28 +4,23 @@
 	<head>
 		<link rel="stylesheet" href="{% static "myblog\base.css" %}" type="text/css" />
 		<link rel="stylesheet" href="{% static "myblog\effect.css" %}" type="text/css" />
+		<link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.css"%}" />
 		{% block meta %}
 		{% endblock %}
 		<title>首页</title>
 	</head>
 
 	<body>
-		<div id="content">
+		<div id="container">
 			<div id="side">
 				<div id="logobar">BBPumpkin的博客</div>
 				<div class="navbox">			
 					<ul id="nav">
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\home.png" %}" width=20px height=100% />首页</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\archive.png" %}" width=20px height=100% />归档</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\category.png" %}" width=20px height=100% />分类</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\tag.png" %}" width=20px height=100% />标签</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\series.png" %}" width=20px height=100% />系列</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\note.png" %}" width=20px height=100% />札记</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\about.png" %}" width=20px height=100% />关于</a></li>
-						<li><a href="#"><img class="nav-brand" src="{% static "myblog\search.png" %}" width=20px height=100% />搜索</a></li>
+						{% include "myblog/nav.html" %}
 					</ul>
 				</div>
-
+				{% block side %}
+				{% endblock %}
 			</div>
 			<div id="main">
 			{% block main %}

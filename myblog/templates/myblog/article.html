@@ -9,7 +9,12 @@
 {% endblock %}
 {% block main %} 
 <div class="mainbox">
-<h1>{{ article.title }}</h1>
-<div class="content">{{ content|safe }}</div>
+      <h1>{{ article.title }}</h1>
+      <div class="header">
+		<i class="fa fw fa-calendar-o"></i>发表于{{ art.create_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-calendar-check-o"></i>更新于{{ art.update_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-folder-o"></i>分类于{{ art.category }}
+	</div>
+      <div class="text">{{ content|safe }}</div>
 </div>
 {% endblock %}

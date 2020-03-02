@@ -1,6 +1,7 @@
 {% extends "myblog/base.html" %}
 {% block main %}
-<h2>上传博文</h2>
+<div class="mainbox">
+<h1>上传博文</h1>
 <form method="POST" action="" enctype="multipart/form-data" style="border:solid 1px rgb(150, 150, 150);padding:10px;border-radius:5px">
 	{% csrf_token %}
 	<p style="font-weight:bold">选择上传文件:</p>
@@ -11,4 +12,5 @@
 	<input type="submit" value="上传"/>
 	</p>
 </form>
+</div>
 {% endblock %}

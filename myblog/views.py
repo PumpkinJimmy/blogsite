@@ -27,7 +27,7 @@ def uploadView(request):
     else:
         data = str(request.FILES['f'].read(), encoding="utf-8")
         lines = data.split('\n')
-        art = Article(title=data[0].lstrip('# '), content=data, brief="")
+        art = Article(title="test", content=data, brief="")
         art.save()
         return HttpResponse("Success")
 

@@ -5,9 +5,9 @@
 <div class="mainbox fadeIn slideDownContent">
 	<div class="item-title">{{ art.title}}</div>
 	<div class="header">
-		<img src="{% static "myblog/create_date.png" %}" class="brand">发表于{{ art.create_date }} &nbsp&nbsp|&nbsp&nbsp 
-		<img src="{% static "myblog/update_date.png" %}" class="brand">更新于{{ art.update_date }} &nbsp&nbsp|&nbsp&nbsp 
-		<img src="{% static "myblog/category.png" %}" class="brand">分类于{{ art.category }}
+		<i class="fa fw fa-calendar-o"></i>发表于{{ art.create_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-calendar-check-o"></i>更新于{{ art.update_date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-folder-o"></i>分类于{{ art.category }}
 	</div>
 
 	<div class="item-text">

@@ -3,7 +3,7 @@ body {
 	padding:0;
 	background-color: #eeeeee;
 }
-#content {
+#container {
 	float: left;
 	margin: 0;
 	padding:0;
@@ -24,10 +24,17 @@ body {
 	margin:0 auto;
 	border: solid 2px;
 	text-align:center;
+	border-radius: 5px;
 }
 .readmore a{
 	text-decoration: none;
 	color: black;
+	display:block;
+}
+.readmore a:hover{
+	text-decoration: none;
+	color: white;
+	background-color: black;
 }
 .sidebox {
 	padding-left: 12px;
@@ -43,8 +50,8 @@ body {
 }
 
 .mainbox {
-	padding-left: 35px;
-	padding-right: 35px;
+	padding-left: 45px;
+	padding-right: 45px;
 	padding-top:25px;
 	padding-bottom:25px;
 	box-shadow: 0 0 5px 1px #c4c4c4;
@@ -90,6 +97,9 @@ body {
 	transition: background-color 0.5s;
 	background-color: #f4f4f4;
 }
+#nav .fa{
+	margin-right:8px;
+}
 .nav-brand{
 	display:table-cell;
 	vertical-align: middle;
@@ -111,4 +121,15 @@ body {
 	font-size: 16px;
 	text-align:center;
 	margin-top: 10px;
+}
+.header .fa{
+	margin-right:6px;
+}
+
+.mainbox h1{
+	text-align: center;
+}
+
+.text {
+	margin-top: 50px;
 }
