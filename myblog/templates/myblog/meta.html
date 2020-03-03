@@ -1,0 +1,7 @@
+<div class="header">
+		<i class="fa fw fa-calendar-o"></i>发表于{{ art.date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-calendar-check-o"></i>更新于{{ art.update_date }}
+		{% if art.category %}
+		&nbsp&nbsp|&nbsp&nbsp <i class="fa fw fa-folder-o"></i>分类于{{ art.category }}
+		{% endif %}
+	</div>

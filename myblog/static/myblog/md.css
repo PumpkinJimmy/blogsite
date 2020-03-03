@@ -1,3 +1,6 @@
+.md{
+	margin-top:50px;
+}
 .md h1{
 }
 .md h2{
@@ -21,6 +24,7 @@
 .md p{
 	font-family: "-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji";
 	font-size: 18px;
+	color: #222222;
 }
 .md .ita{
 	font-style: italic;
