@@ -31,4 +31,25 @@ to {transform:translateY(0);}
 .slideDownContent * {
 	animation: slideDownFrame 0.9s;
 }
-	
+
+@keyframes msgSlideDownFrame {
+	0% {
+		top:-100px;
+	}
+	50% {
+		top:0;
+	}
+	100% {
+		top:-100px;
+	}
+}
+.msg-box{
+	position: fixed;
+	top:-100px;
+	background-color:rgb(70, 128, 235);
+	width: 100%;
+	padding: 6px;
+	padding-left:30px;
+	opacity: 60%;
+	animation: msgSlideDownFrame 4s;
+}

@@ -1,16 +1,68 @@
 {% extends "myblog/base.html" %}
 {% block main %}
 <div class="mainbox">
-<h1>上传博文</h1>
-<form method="POST" action="" enctype="multipart/form-data" style="border:solid 1px rgb(150, 150, 150);padding:10px;border-radius:5px">
-	{% csrf_token %}
-	<p style="font-weight:bold">选择上传文件:</p>
-	<p>
-	<input type="file" name="f" />
-	<p>
-	<p>
-	<input type="submit" value="上传"/>
-	</p>
-</form>
+	<h1>博文上传</h1>
+	<form class="upload" action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>标题：</td>
+				<td><input type="text" name="title" value="无标题" /></td>
+			</tr>
+			<tr>
+				<td><label><input type="checkbox" name="title-from-file" value="true" />标题从文档中提取</label></td>
+			<tr>
+			<tr>
+				<td>文档类型：</td>
+				<td><input type="text" name="doctype" value="markdown" /></td>
+			</tr>
+			<tr>
+				<td>分类：</td>
+				<td><select name="category">
+						<option value="计算机">计算机</option>
+						<option value="文学">文学</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td>标签</td>
+				<td>
+					<label><input type="checkbox" name="tag-文学" value="true"/>文学</label>
+					<label><input type="checkbox" name="tag-计算机" value="true"/>计算机</label>
+					<label><input type="checkbox" name="tag-Python" value="true"/>Python</label>
+					<label><input type="checkbox" name="tag-Django" value="true"/>Django</label>
+				</td>
+			</tr>
+			<tr>
+				<td>上传文件：</td>
+				<td><input type="file" name="file"/>
+				<td>
+			</tr>
+			<tr>
+				<td>简介：</td>
+				<td><textarea name="brief"></textarea></td>
+			</tr>
+			<tr>
+				<td>
+					<label><input type="checkbox" name="brief-from-file" value="true" />简介从文章中提取</label>
+				</td>
+			</tr>
+		</table>
+		<div style="text-align:center; margin-top:40px;">
+			<input type="submit" value="预览" />
+			<input type="submit" value="上传" />
+		</div>
+	</form>
+	<!-- <h1>上传博文</h1>
+	<form method="POST" action="" enctype="multipart/form-data"
+		style="border:solid 1px rgb(150, 150, 150);padding:10px;border-radius:5px">
+		{% csrf_token %}
+		<p style="font-weight:bold">选择上传文件:</p>
+		<p>
+			<input type="file" name="f" />
+			<p>
+				<p>
+					<input type="submit" value="上传" />
+				</p>
+	</form> -->
 </div>
 {% endblock %}

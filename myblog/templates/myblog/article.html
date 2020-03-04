@@ -2,10 +2,18 @@
 {% block meta %}
 {% load static %}
 <link rel="stylesheet" href="{% static "myblog/md.css" %}" />
+<link rel="stylesheet" href="{% static "myblog/effect.css" %}" />
 <link rel="stylesheet"
       href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+{% block outer %}
+{% if success %}
+<div class="msg-box">
+      添加成功
+</div>
+{% endif %}
+{% endblock %}
 {% endblock %}
 {% block main %} 
 <div class="mainbox">

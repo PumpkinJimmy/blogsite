@@ -137,3 +137,20 @@ body {
 	text-indent: 2em;
 	color: #222222;
 }
+
+.upload {
+	margin-top:70px;
+	margin-bottom: 250px;
+}
+.upload table{
+	margin-left:auto;
+	margin-right:auto;
+}
+.upload input[type="checkbox"]{
+	margin:0;
+	margin-right:10px;
+	transform:scale(1.1)
+}
+.upload label{
+	margin-right:20px;
+}

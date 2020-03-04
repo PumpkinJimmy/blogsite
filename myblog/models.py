@@ -17,7 +17,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=200)
-    brief = models.CharField(max_length=400)
+    brief = models.CharField(max_length=400,blank=True, null=True)
     content = models.TextField()
     date = models.DateField(auto_now_add=True)
     update_date = models.DateField(auto_now=True)
