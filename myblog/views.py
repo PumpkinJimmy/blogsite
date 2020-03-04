@@ -7,7 +7,7 @@ from django.http.response import HttpResponse
 
 
 def indexView(request):
-    return render(request, 'myblog/index.html')
+    return render(request, 'myblog/index.html', context={'request':request})
 
 def articleView(request, id, upload_success=False):
     art = Article.objects.get(id=id)
@@ -16,21 +16,24 @@ def articleView(request, id, upload_success=False):
         renderer = HtmlRenderer()
         content = renderer.render(parser.parse(art.content.replace('\r', '')))
         content = '<div class="md">' + content + '</div>'
-        return render(request, 'myblog/article.html', context={'art': art, 'content':content, 'success':upload_success})
+        return render(request, 'myblog/article.html', context={'request':request, 'art': art, 'content':content, 'success':upload_success})
     elif art.doctype == '' or art.doctype == 'plain':
         lines = art.content.split('\n')
         content = '<div class="text"><p>' + '</p><p>'.join(lines) + '</p></div>'
-        return render(request, 'myblog/article.html', context={'art': art, 'content':content, 'success':upload_success})
+        return render(request, 'myblog/article.html', context={
+            'request':request, 'art': art, 'content':content, 'success':upload_success})
     else:
         raise Exception("Unknow doctype")
 def articleListView(request):
     arts = Article.objects.order_by('-update_date')
     return render(request, 'myblog/article_list.html',
-                  context={'articles':arts})
+                  context={'articles':arts, 'request':request})
 
 def uploadView(request):
+    if not request.user.is_authenticated:
+        return HttpResponse("无权访问")
     if request.method == "GET":
-        return render(request, 'myblog/upload.html')
+        return render(request, 'myblog/upload.html', context={'request':request})
     else:
         data = str(request.FILES['file'].read(), encoding="utf-8")
         # lines = data.split('\n')

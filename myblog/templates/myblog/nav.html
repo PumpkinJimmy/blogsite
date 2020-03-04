@@ -6,4 +6,8 @@
 <li><a href="#"><i class="fa fa-fw fa-sticky-note"></i>札记</a></li>
 <li><a href="#"><i class="fa fa-fw fa-user"></i>关于</a></li>
 <li><a href="#"><i class="fa fa-fw fa-search"></i>搜索</a></li>
+{% if request.user.is_authenticated %}
 <li><a href="{% url "upload" %}"><i class="fa fa-fw fa-upload"></i>上传</a></li>
+{% else %}
+<li><a href="/admin/"><i class="fa fa-fw fa-sign-in"></i>登录</a>
+{% endif %}
