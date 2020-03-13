@@ -1,12 +1,5 @@
 {% extends "myblog/base.html" %}
-{% block meta %}
 {% load static %}
-<link rel="stylesheet" href="{% static "myblog/md.css" %}" />
-<link rel="stylesheet" href="{% static "myblog/effect.css" %}" />
-<link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 {% block outer %}
 {% if success %}
 <div class="msg-box">
@@ -14,11 +7,29 @@
 </div>
 {% endif %}
 {% endblock %}
+{% block meta %}
+<link rel="stylesheet" href="{% static "myblog/md.css" %}" />
+<link rel="stylesheet" href="{% static "myblog/effect.css" %}" />
+<link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+<script src="{% static "myblog/jquery.js"%}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="{% static "myblog/contents.js" %}"></script>
+<script src="{% static "myblog/base.js" %}"></script>
+{% endblock %}
+{% block side %}
+<div class="sidebox" id="contents">
+<h1 class="contents-title">目录</h1>
+<div class="contents">
+{{ cs|safe }}
+</div>
+</div>
 {% endblock %}
 {% block main %} 
 <div class="mainbox">
       <h1>{{ art.title }}</h1>
-      {% include "myblog/meta.html" %}
+      {% include "myblog/meta_full.html" %}
      {{ content|safe }}
 </div>
 {% endblock %}

@@ -1,0 +1,15 @@
+<div class="header">
+		<i class="fa fw fa-calendar-o"></i>发表于{{ art.date }} &nbsp&nbsp|&nbsp&nbsp 
+		<i class="fa fw fa-calendar-check-o"></i>更新于{{ art.update_date }}
+		{% if art.category %}
+		&nbsp;&nbsp;|&nbsp;&nbsp; <i class="fa fw fa-folder-o"></i>分类于{{ art.category }}
+		{% endif %}
+		{% if art.tags.count %}
+		<div class="tags">
+			<br /><i class="fa fw fa-tag"></i>标签:&nbsp; &nbsp;
+			{% for tag in art.tags.all %}
+			<a href="#">{{ tag.name }}</a> &nbsp;&nbsp;
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div>

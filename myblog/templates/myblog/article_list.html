@@ -3,7 +3,9 @@
 {% block main %}
 {% for art in articles %}
 <div class="mainbox fadeIn slideDownContent">
-	<div class="item-title">{{ art.title}}</div>
+	<div class="item-title">
+		<a href={% url "article" art.id %}>{{ art.title }}</a>
+	</div>
 	{% include "myblog/meta.html"%}
 
 	<div class="item-text">

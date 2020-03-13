@@ -53,3 +53,7 @@ to {transform:translateY(0);}
 	opacity: 60%;
 	animation: msgSlideDownFrame 4s;
 }
+.fixed-top{
+	position: fixed;
+	top:30px;
+}

@@ -1,0 +1,11 @@
+{% extends "myblog/base.html" %}
+{% block main %}
+<div class="mainbox">
+    <h1>全部标签</h1>
+    <div class="tag-list">
+        {% for tag in tags %}
+        <a href="#">{{ tag.name }}</a> &nbsp;&nbsp;
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

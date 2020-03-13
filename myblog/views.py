@@ -1,7 +1,8 @@
 from django.shortcuts import render, reverse, redirect
-from .models import Article, Category
-from md_parse.parse import Parser, HtmlRenderer
+from .models import Article, Category, Tag
+from md_parse.parse import Parser, HtmlRenderer, ContentsParser, ContentsRenderer
 from django.http.response import HttpResponse
+import django.contrib.auth as auth
 
 # Create your views here.
 
@@ -14,9 +15,12 @@ def articleView(request, id, upload_success=False):
     if art.doctype == "markdown":
         parser = Parser()
         renderer = HtmlRenderer()
-        content = renderer.render(parser.parse(art.content.replace('\r', '')))
+        ast = parser.parse(art.content.replace('\r', ''))
+        cs = ContentsParser().parse(ast)
+        cs = ContentsRenderer().render(cs)
+        content = renderer.render(ast)
         content = '<div class="md">' + content + '</div>'
-        return render(request, 'myblog/article.html', context={'request':request, 'art': art, 'content':content, 'success':upload_success})
+        return render(request, 'myblog/article.html', context={'request':request, 'cs':cs, 'ast': ast, 'art': art, 'content':content, 'success':upload_success})
     elif art.doctype == '' or art.doctype == 'plain':
         lines = art.content.split('\n')
         content = '<div class="text"><p>' + '</p><p>'.join(lines) + '</p></div>'
@@ -46,5 +50,10 @@ def uploadView(request):
         art.save()
         return articleView(request, art.pk, True)
         # return redirect('article', id=art.pk)
+
+def tagsView(request):
+    return render(request, "myblog/tags.html", context={
+        'tags': Tag.objects.all()
+    })
 
 

@@ -42,11 +42,15 @@ body {
 	padding-top:15px;
 	padding-bottom:15px;
 	background-color: #ffffff;
+	margin-bottom: 30px;
+	box-shadow: 0 0 5px 1px #c4c4c4;
 }
 .navbox {
 	padding-top:15px;
 	padding-bottom:15px;
 	background-color: #ffffff;
+	margin-bottom: 30px;
+	box-shadow: 0 0 5px 1px #c4c4c4;
 }
 
 .mainbox {
@@ -65,13 +69,21 @@ body {
 	padding-top: 70px;
 	padding-bottom: 50px;
 	font-size: 20px;
+	box-shadow: 0 0 5px 1px #c4c4c4;
 }
 
 .item-title {
 	text-align:center;
 	font-size:28px;
 	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
+}
+.item-title a{
+	text-decoration: none;
+	color: inherit;
+}
+.item-title a:hover{
+	color: #4894f7;
 }
 .item-text{
 	font-size:18px;
@@ -121,11 +133,24 @@ body {
 	font-size: 16px;
 	text-align:center;
 	margin-top: 10px;
+	margin-bottom: 20px;
 }
 .header .fa{
 	margin-right:6px;
 }
-
+.header .tags{
+	margin: 0;
+	padding:0;
+	margin-top: -5px;
+}
+.header .tags a{
+	text-decoration: none;
+	color:inherit;
+	text-decoration-line: underline;
+}
+.header .tags a:hover {
+	color:#4894f7;
+}
 .mainbox h1{
 	text-align: center;
 }
@@ -153,4 +178,37 @@ body {
 }
 .upload label{
 	margin-right:20px;
+}
+.tag-list{
+	text-align: center;
+	margin-top: 40px;
+	min-height: 600px;
+}
+.tag-list a{
+	text-decoration: underline;
+	color: #555555;
+	font-size:20px;
+}
+.contents{
+	padding-left:40px;
+}
+.contents ul{
+	margin-top:7px;
+	padding-left:25px;
+}
+.contents li{
+	margin-bottom: 7px;
+}
+.contents a{
+	text-decoration: none;
+	color: #555555;
+}
+.contents a:hover{
+	text-decoration: underline;
+	color: #444444;
+}
+.contents-title{
+	font-size: 20px;
+	text-align:center;
+	margin-bottom: 20px;
 }
